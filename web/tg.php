@@ -28,14 +28,15 @@
 
     $today    = date('Y-m-d');
     $text     = @$_GET["text"];
-    $tgid     = @$_GET["tgid"];
+//    $tgid     = @$_GET["chatid"];
+    $tgid = isset($_GET['chatid']) ? $_GET['chatid'] : strval(getenv('chat_id'));
     $sendText = urlencode($today . "\n" . $text);
     if ($text)
     {
-        echo getenv('botid');
-        $url = "https://api.telegram.org/bot" .  strval(getenv('botid')) . "/sendMessage?chat_id=" .  strval(getenv('chat_id')) . "&text={$sendText}&parse_mode=HTML";
+        //echo getenv('botid');
+        $url = "https://api.telegram.org/bot" .  strval(getenv('botid')) . "/sendMessage?chat_id=" .  $tgid . "&text={$sendText}&parse_mode=HTML";
          echo send_get($url);
-         echo $today;
+         //echo $today;
 }
     else
     {
