@@ -33,15 +33,15 @@
     if ($text)
     {
         echo getenv('botid');
-        $url = "https://api.telegram.org/bot" +  strval(getenv('botid')) + "/sendMessage?chat_id=" +  strval(getenv('chat_id')) + "&text={$sendText}&parse_mode=HTML";
+        $url = "https://api.telegram.org/bot" .  strval(getenv('botid')) . "/sendMessage?chat_id=" .  strval(getenv('chat_id')) . "&text={$sendText}&parse_mode=HTML";
          echo send_get($url);
          echo $today;
 }
     else
     {
-        //echo "Please Input";
-        //cho send_get('http://www.google.com');
-        echo getenv('botid');
-        echo getenv('chat_id');
+        echo "hello";
+        //echo send_get('http://www.google.com');
+//        echo getenv('botid');
+//        echo getenv('chat_id');
     }
 ?>
