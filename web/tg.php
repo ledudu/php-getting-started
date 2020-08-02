@@ -26,7 +26,7 @@
         return $result;
     }
 
-    $today    = date('Y-m-d');
+    $today    = date('Y-m-d H:i:s');
     $text     = @$_GET["text"];
 //    $tgid     = @$_GET["chatid"];
     $tgid = isset($_GET['chatid']) ? $_GET['chatid'] : strval(getenv('chat_id'));
