@@ -26,11 +26,13 @@ $text = @$_GET["text"];
 $tgid = @$_GET["tgid"];
 $sendText = urlencode($today."\n".$text);
 if($text){
- $url = "https://api.telegram.org";
+    echo getenv('botid');
+ $url = "https://api.telegram.org/bot"+(str)getenv('botid')+"/sendMessage?chat_id="+(str)getenv('chat_id')+"&text={$sendText}&parse_mode=HTML";
  echo send_get($url);
  echo $today;
 }else{
  //echo "Please Input";
- echo send_get('http://www.google.com');
+ echo getenv('botid');
+ echo (str)getenv('chat_id');
 }
 ?>
