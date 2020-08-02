@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('Asia/Shanghai');//'Asia/Shanghai'   亚洲/上海
     $bot_api_key = 'CHANGE HERE';
     function send_get($urlstring)
     {
