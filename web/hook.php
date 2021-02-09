@@ -5,7 +5,7 @@
 
     $chatId  = $update["message"]["chat"]["id"];
     $message = $update["message"]["text"];
-    $message = $message.toLowerCase();
+    //$message = strtolower($message);
 
     if (strpos($message, "/hello") === 0)
     {
