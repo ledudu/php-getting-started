@@ -9,9 +9,16 @@
 
     if (strpos($message, "/hello") === 0)
     {
-        $location = substr($message, 7);
+        $redcode = substr($message, 7);
         //$weather  = json_decode(file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=" . $location . "&appid=mytoken"), true)["weather"][0]["main"];
-        $sendmessage = "日常发送";
-        file_get_contents($path . "/sendmessage?chat_id=" . $chatId . "&text=Here's the weather in " . $location . ": " . $sendmessage);
+        $sendmessage = "红包代码保存完毕";
+        file_get_contents($path . "/sendmessage?chat_id=" . $chatId . "&text=" . $sendmessage);
+
+        if (strlen($redcode) != 0)
+        {
+            $myfile = fopen("redcode.txt", "w") or die("Unable to open file!");
+            fwrite($myfile, $redcode);
+            fclose($myfile);
+        }
     }
 ?>
