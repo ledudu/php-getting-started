@@ -19,6 +19,7 @@
      */
     function receiveCmd($msg,$cmd,$filename,$successMsg = '代码保存完毕',$failMsg = '代码未改变')
     {
+        global $path,$chatId;
         if (strpos($msg, $cmd) === 0)
         {
             $addCode = trim(substr($msg, strlen($cmd)));
