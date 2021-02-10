@@ -7,8 +7,8 @@
     $message = $update["message"]["text"];
     //$message = strtolower($message);
 
-    receiveCmd($message,'/addredcode','redcode.txt','整点红包代码保存完毕','整点红包代码未改变');
-    receiveCmd($message,'/addredcodehalf','redcodehalf.txt','半点红包代码保存完毕','半点红包代码未改变');
+    receiveCmd($message,'/addredcode ','redcode.txt','整点红包代码保存完毕','整点红包代码未改变');
+    receiveCmd($message,'/addredcodehalf ','redcodehalf.txt','半点红包代码保存完毕','半点红包代码未改变');
 
     /**
      * @param $msg  接收的全部信息
@@ -21,7 +21,7 @@
     {
         if (strpos($msg, $cmd) === 0)
         {
-            $addCode = substr($msg, strlen($cmd)+1);
+            $addCode = trim(substr($msg, strlen($cmd)));
 
             if (strlen($addCode) != 0)
             {
