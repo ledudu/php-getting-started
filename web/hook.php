@@ -28,7 +28,7 @@
             {
                 $today = date("d");
                 $arr=[
-                    'code' => '200',
+                    'code' => 200,
                     'date'=>$today,
                     'redcode'=>$addCode
                 ];
