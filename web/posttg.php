@@ -30,7 +30,7 @@
 
     $today    = date('Y-m-d H:i:s');
     $text     = @$_POST["text"];
-    $tgid     = isset($_POST['chatid']) ? $_POST['chatid'] : strval(getenv('chat_id'));
+    $tgid     = isset($_POST['chat_id']) ? $_POST['chat_id'] : strval(getenv('chat_id'));
     //$sendText = urlencode($today . "\n" . $text);
     $sendText = $today . "\n" . $text;
     if ($text)
